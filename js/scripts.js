@@ -10,6 +10,10 @@ let sortOrder = {
     column: "market_cap",
     order: "DESC",
 };
+let coinID = location.search.slice(1);
+let COIN_ENDPOINT =
+    `/coins/${coinID}?localization=false&tickers=true&market_data=true&community_data=false&developer_data=false&sparkline=false`;
+let coin = BASE_URL + COIN_ENDPOINT;
 
 $(document).ready(() => {
     document.body.classList.toggle("dark-mode");
@@ -40,7 +44,7 @@ function generateCoinTableBody(data) {
                 $('<td class="text-center"></td>').text(data[apiKey].market_cap_rank),
                 $('<td id="specific" class="text-left"></td>').append(
                     $('<div></div>').append(
-                        `<img src="${data[apiKey].image}" width="25"> <a href="/coinDetails.html?${data[apiKey].id}">
+                        `<img src="${data[apiKey].image}" width="25"> <a href="/coin.html?${data[apiKey].id}">
             ${data[apiKey].name}</a>`)),
                 $('<td class="text-right boldText"></td>').text(
                     "$" + number.format(data[apiKey].current_price.toFixed(2))

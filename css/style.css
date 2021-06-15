@@ -55,7 +55,6 @@ a:active {
     color: white;
 }
 
-
 /* ID elements*/
 
 #coinList {
@@ -63,7 +62,7 @@ a:active {
 }
 
 #coinTableBody {
-    color: white;
+  color: white;
 }
 
 #exchangeTableBody {
