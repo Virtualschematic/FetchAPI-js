@@ -25,6 +25,7 @@ a:active {
 
 .boldText {
     font-weight: bold;
+    display: block;
 }
 
 
@@ -71,5 +72,5 @@ a:active {
 
 #globalTableBody {
     color: white;
-    font-size: 0.9em;
+    font-size: 1em;
 }
