@@ -187,4 +187,8 @@ only screen and (max-width: 760px),
 	td:nth-of-type(6):before { content: "Circulating Supply"; }
 	td:nth-of-type(7):before { content: "Price Change 24h"; }
 
+
+
+
 }
+
