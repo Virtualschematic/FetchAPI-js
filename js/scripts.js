@@ -53,10 +53,8 @@ function generateCoinTableBody(data) {
                 $('<td class="text-left"></td>').text(data[apiKey].market_cap_rank),
                 $('<td id="specific" class="text-left "></td>').append(
                     $('<div></div>').append(
-
-
-=======
-                        `<img src="${data[apiKey].image}" width="25"> <a  href="/coinDetails.html?${data[apiKey].id}">
+                        `<img src="${data[apiKey].image}" width="25">
+ <a  href="/coinDetails.html?${data[apiKey].id}">
 
             ${data[apiKey].name}</a>`)),
                 $('<td class="text-left "></td>').text(
@@ -228,12 +226,6 @@ function generateListElements(data) {
     $('#coinList').html(""); //clears list
     $('#coinList').append(
         $('<li class="list-group-item"></li>').text("Name: " + data.name),
-
-        $('<li class="list-group-item"></li>').html(
-            `<coingecko-coin-price-chart-widget  coin-id="${data.name}" currency="nzd" height="300" locale="en" background-color="#1A1717"></coingecko-coin-price-chart-widget>`),
-        $('<li class="list-group-item"></li>').html(
-            `<coingecko-coin-market-ticker-list-widget  coin-id="${data.name}" currency="nzd" height="300" locale="en" background-color="#1A1717"></coingecko-coin-market-ticker-list-widget>`),
-
         $('<li  class="list-group-item"></li>').html(
             `<coingecko-coin-price-widget  coin-id="${coinID}" currency="nzd" height="300" locale="en"></coingecko-coin-price-widget> `),
         $('<li class="list-group-item"></li>').html(
@@ -256,22 +248,6 @@ function generateListElements(data) {
         $('<li class="text-danger list-group-item"></li>').text("From ATH: " +
             Number(data.market_data.ath_change_percentage.usd).toFixed(2) + "%"),
     );
-};
-
-function getApiData() {
-    fetch(coin)
-
-        $('<li class="text-success ?  text-danger :list-group-item"></li>').text("From ATH: " +
-            Number(data.market_data.ath_change_percentage.usd).toFixed(2) + "%"),
-
-
-
-    
-
-
-
-    // <coingecko-coin-heatmap-widget height="400" locale="en"></coingecko-coin-heatmap-widget>
-
 };
 async function refreshCoinList() {
     generateListElements(await getApiData());
