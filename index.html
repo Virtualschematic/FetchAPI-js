@@ -11,12 +11,19 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
     <title>Crypto Currencies</title>
+  <!---
+
+    <title>Crypto Currency | Prices</title>
+
 </head>
 
 <body>
+    <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #131214;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Crypto Currency Prices</a>
+            <a class="navbar-brand" href="/index.html">
+                <img src="/" height="50" width="" alt="">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -25,10 +32,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-pills me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/index.html">Coins</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Chart</a>
+
+                       
+
+                        <a class="nav-link" href="/coinDetails.html">Crypto Charts</a>
+
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -38,11 +49,14 @@
             </div>
         </div>
     </nav>
+    <br>
 
-    <!-- Page Conatainer -->
+    <!-- Global Market Data -->
     <div class="container">
-        <br>
-        <!-- Global Market Data -->
+        <img class="img img-responsive\" src="resources/images/CoinGeckoLogo.png" height="100" width="100" alt="">
+        Powered by
+        <a href="https://www.coingecko.com/" target="_blank">CoinGecko
+        </a>
         <div class="card text-white" style="background-color: #131214;">
             <div class="card-header text-center">
                 Global Market Data
@@ -51,20 +65,45 @@
                 <table class="table table-borderless">
                     <tbody id="globalTableBody">
                         <tr class="content-row">
-                            <td><span class="boldText">Coins: </span><span id="coinSpan"></span></td>
-                            <td><span class="boldText">Exchanges: </span><span id="exchangesSpan"></span></td>
+                            <td><span class="boldText">Coins: </span>
+                                <span id="coinSpan"></span>
+                            </td>
+                            <td><span class="boldText">Exchanges: </span>
+                                <span id="exchangesSpan"></span>
+                            </td>
                             <td><span class="boldText">Total Market Cap: </span><span id="totalMarketCapSpan"></span>
-                                <span id="totalMarketCapSpanPercent"></span></td>
+                                <span id="totalMarketCapSpanPercent"></span>
+                            </td>
                             <td><span class="boldText">24h Vol: </span><span id="_24hVolSpan"></span></td>
                             <td class="text-right"><span class="boldText">Dominance: </span><span id="btcSpan"></span>
-                                <span id="ethSpan"></span></td>
+                                <span id="ethSpan"></span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
         </div>
         <br>
-        <!-- Coin Table -->
+        <!-- Pagination -->
+        <ul class="nav-item ml-auto">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item">
+                        <a id="pageNumber" class="page-link app-page-next" href="#"></a>
+                    </li>
+                    <li class="page-item">
+                        <a id="pAnchor" class="page-link app-page-prev" href="#">Previous 100</a>
+                    </li>
+                    <li class="page-item">
+                        <a id="nAnchor" class="page-link app-page-next" href="#">Next 100</a>
+                    </li>
+                </ul>
+            </nav>
+        </ul>
+
+        <!-- Coin Table 
+
 
         <h3 class=" text-center"> Coin Price Chart</h3>
         <table class="table table-borderless">
@@ -93,6 +132,70 @@
     <div class="card-footer text-muted">
     </div>
     </div>
+
+-->
+        <div class="card text-white" style="background-color: #131214;">
+            <div class="card-header text-center">
+                Coin Price Chart
+
+                <div class="card-body">
+                    <!-- <div class=" table-responsive" id="no-more-tables"> -->
+                    <!-- <table class="table align-middle table-borderless"> -->
+                    <table id="coinstable" role="table">
+                        <thead id="cointablehead" role="rowgroup">
+                            <tr id="coinstablerow" role="row">
+                                <th role="columnheader" class="text-left" scope="col"><a href="#" class="sortable"
+                                        name="market_cap_rank">Rank
+                                </th>
+                                <th role="columnheader" class="text-left" scope="col"><a href="#" class="sortable"
+                                        name="name">Name
+                                </th>
+                                <th role="columnheader" class="text-left" scope="col"><a href="#" class="sortable"
+                                        name="current_price">Price
+                                </th>
+                                <th role="columnheader" class="text-left" scope="col"><a href="#" class="sortable"
+                                        name="market_cap">Market
+                                        Cap</th>
+                                <th role="columnheader" class="text-left" scope="col"><a href="#" class="sortable"
+                                        name="total_volume">Volume
+                                        (24h)</th>
+                                <th role="columnheader" class="text-left" scope="col"><a href="#" class="sortable"
+                                        name="circulating_supply">Circulating
+                                        Supply</th>
+                                <th role="columnheader" class="text-left" scope="col"><a href="#" class="sortable"
+                                        name="price_change_percentage_24h">Price
+                                        Change (24h)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="coinTableBody"></tbody>
+
+                    </table>
+                </div>
+            </div>
+            <hr>
+
+
+
+
+            <footer class="footer">
+                <div class="text-center">
+                    <p> &copy;2021 <a href="https://github.com/Virtualschematic" target="_blank">VirtualSchematics</a>
+                    </p>
+                </div>
+                <p class="developers" style="color:gray">
+                    Site Developers:
+                    <ul>
+                        <li><a href="https://github.com/lukeponga-dev">Luke Ponga!</a></li>
+                        <li> <a href="#">Luke Hartley</a> </li>
+                    </ul>
+
+                </p>
+        </div> <br>
+        Powered by
+        <a href="https://www.coingecko.com/" target="_blank">CoinGecko
+        </a>
+        </footer>
+
     </div>
 
 
@@ -106,6 +209,10 @@
 
     <!-- Custom JS -->
     <script src="/js/scripts.js"></script>
+
+
+
+
 
 </body>
 
