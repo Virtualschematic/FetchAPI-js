@@ -1,52 +1,44 @@
-/* Responsive Coin Table */
 
-@media only screen and (max-width: 800px) {
-    /* Force table to not be like tables anymore */
-    #no-more-tables table,
-    #no-more-tables thead,
-    #no-more-tables tbody,
-    #no-more-tables th,
-    #no-more-tables td,
-    #no-more-tables tr {
-        display: block;
-    }
-    /* Hide table headers (but not display: none;, for accessibility) */
-    #no-more-tables thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-    #no-more-tables tr {
-        border: 1px solid #ccc;
-    }
-    #no-more-tables td {
-        /* Behave  like a "row" */
-        border: none;
-        border-bottom: 1px solid #eee;
-        position: relative;
-        padding-left: 50%;
-        white-space: normal;
-        text-align: left;
-    }
-    #no-more-tables td:before {
-        /* Now like a table header */
-        position: absolute;
-        /* Top/left values mimic padding */
-        top: 6px;
-        left: 6px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        text-align: left;
-        font-weight: bold;
-    }
-    /*
-	Label the data
-	*/
-    #no-more-tables td:before {
-        content: attr(data-title);
-    }
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  #coinstablerow tr:nth-of-type(odd) { 
+    background:darkmode; 
+  }
+  .sortable th { 
+    background: darkmode; 
+    font-weight: bold; 
+  }
+   td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+  }
+
+  .footer ul li {
+list-style: none;
+display: inline-block;
 }
+
+.footer li a{
+        padding-left: 10px;
+        margin-left: 10px;
+        font-size: 11;
+}
+.foote a:hover{
+        transform: perspective(-9999px);
+        color: white;
+}
+.developers{
+    font-size: 13px;
+    margin-left: 35px;
+    font-weight: 700;   
+}
+
+
 
 
 /* HTML elements*/
@@ -62,12 +54,12 @@ a:link {
 }
 
 a:hover {
-    color: blue;
+    color: lightgrey;
     text-decoration: underline;
 }
 
 a:active {
-    color: yellow;
+    color: blue;
     text-decoration: underline;
 }
 
@@ -105,31 +97,94 @@ a:active {
     background-color: rgb(26, 23, 23);
     color: white;
 }
-
-
 /* ID elements*/
 
-#coinList {
-    color: black;
-}
+#coinList  {
+    color: white;
+    background-color: rgb(26, 23, 23);}
 
 #coinTableBody {
     color: white;
-    font-size: 19px;
-}
-
-#exchangeTableBody {
-    color: white;
+    text-align: left;
+    font-size: 15px;
 }
 
 #globalTableBody {
-    color: white;
-    font-size: 1.3em;
+    color: #ffff;
+    font-size: 15px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 
-#coinTableBody #change {
-    font-size: 20px;
-    text-align: center;
+#coinSpan,
+#exchangesSpan,
+#totalMarketCapSpan,
+#_24hVolSpan,#btcSpan,
+#ethSpan{
+    color: lightseagreen;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline;
+
+}
+.cg-container{
+    color: white;
+}
+div.cg-container .cg-flex .cg-flex-column .cg-relative .small{
+    color: white;
+}
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    #globalTableBody {
+    font-size: 11px;
+    }
+
+	/* Force table to not be like tables anymore */
+	#coinstable, #coinstablehead, #coinTableBody, .sortable,td.text-left, .content-row { 
+		display: block; 
+	}
+    /* Hide table headers (but not display: none;, for accessibility) */
+	thead tr{ 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	tr { border: none; margin-bottom: 20px;}
+	
+	td.text-left { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Rank"; }
+	td:nth-of-type(2):before { content: "Name"; }
+	td:nth-of-type(3):before { content: "Price(NZD)"; }
+	td:nth-of-type(4):before { content: "Market Cap"; }
+	td:nth-of-type(5):before { content: "Volume (24h)"; }
+	td:nth-of-type(6):before { content: "Circulating Supply"; }
+	td:nth-of-type(7):before { content: "Price Change 24h"; }
+
 }
